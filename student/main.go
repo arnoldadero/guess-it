@@ -12,7 +12,7 @@ import (
 // Store recent numbers in a slice.
 // Calculate moving average and standard deviation.
 // Print range prediction.
-const maxHistory = 10 // define how many nubers to keeo in history
+const maxHistory = 5 // define how many nubers to keeo in history
 
 func main() {
 	var history []float64
@@ -26,7 +26,7 @@ func main() {
 			continue
 		}
 		// output the current input
-		fmt.Println(num)
+	
 		// add the new number to the history slice
 		history = append(history, num)
 		//
@@ -42,7 +42,7 @@ func main() {
 			// predict the next range using the mean and standard deviation
 			lowerBound := int(mean - 2*stdDev)
 			upperBound := int(mean + 2*stdDev)
-			fmt.Printf("Predicted range: [%d, %d]\n", lowerBound, upperBound)
+			fmt.Printf("[%d, %d]\n", lowerBound, upperBound)
 		}
 	}
 }
